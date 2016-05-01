@@ -22,5 +22,11 @@ function checkKey(e) {
     e = e || window.event;
     if (e.charCode == 32) {
       eventFire(document.getElementById('buttonPlay'), 'click');
+    } else if(e.ctrlKey && e.keyCode == 37) {
+      eventFire(document.getElementById('buttonPrev'), 'mousedown');
+      eventFire(document.getElementById('buttonPrev'), 'mouseup');
+    } else if(e.ctrlKey && e.keyCode == 39) {
+      eventFire(document.getElementById('buttonNext'), 'mousedown');
+      eventFire(document.getElementById('buttonNext'), 'mouseup');
     }
 }
