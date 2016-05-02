@@ -6,6 +6,11 @@
 // @grant       none
 // ==/UserScript==
 
+// Enables new keyboard shortcuts:
+// Space to pause/resume the current video.
+// Ctrl + Right arrow to jump to the next video in the playlist.
+// Ctrl + Left arrow to jump to the previous video in the playlist.
+
 document.onkeypress = checkKey;
 
 function eventFire(el, etype){
