@@ -31,7 +31,10 @@ setTimeout(function() {
         eventFire(week, 'click');
         setTimeout(function() {
           eventFire(document.getElementById('gwt-uid-1'), 'click');
-        }, 10000);
+          setTimeout(function() {
+            eventFire(document.getElementsByClassName('button-action-primaire')[0], 'click');
+          }, 1000);
+        }, 1000);
       }
     }, 1000);
   }
