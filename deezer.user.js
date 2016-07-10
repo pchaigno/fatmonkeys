@@ -35,7 +35,14 @@ function getPlayButton() {
   var div = document.getElementById('naboo_content');
   var play_button = null;
   if(div != null) {
-    play_button = div.getElementsByClassName('icon-stack-circle')[0];
+    var flow = div.getElementsByClassName('flow-btn');
+    if(flow.length == 1) {
+      flow = flow[0];
+      play_button = div.getElementsByClassName('icon-stack-circle');
+      if(play_button.length > 1) {
+        play_button = play_button[0];
+      }
+    }
   }
   return play_button;
 }
