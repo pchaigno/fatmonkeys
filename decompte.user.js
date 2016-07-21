@@ -29,7 +29,7 @@ function validate(week){
     for (var i=0; i<trs.length; i++){
       motif = trs[i].children[4].children[0].innerHTML;
       //alert(motif);
-      if(motif == '½ CA'){
+      if(motif == '½ CA' || motif == '½ JTL'){
         //alert('half day');
         inputs = trs[i].children[2].getElementsByTagName('input');
         //hour
