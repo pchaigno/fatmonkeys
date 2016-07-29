@@ -23,34 +23,34 @@ function eventFire(el, etype){
 
 function validate(week){
   eventFire(week, 'click');
-  tbody = document.getElementsByTagName('tbody')[0];
-  if (tbody){
-    trs = tbody.children;
-    for (var i=0; i<trs.length; i++){
-      motif = trs[i].children[4].children[0].innerHTML;
-      //alert(motif);
-      if(motif == '½ CA' || motif == '½ JTL'){
-        //alert('half day');
-        inputs = trs[i].children[2].getElementsByTagName('input');
-        //hour
-        inputs[0].value = "3";
-        eventFire(inputs[0], 'input');
-        //min
-        inputs[1].value = "48";
-        eventFire(inputs[1], 'input');
-        eventFire(inputs[0], 'change');
+  setTimeout(function() {
+    tbody = document.getElementsByTagName('tbody')[0];
+    if (tbody){
+      trs = tbody.children;
+      for (var i=0; i<trs.length; i++){
+        motif = trs[i].children[4].children[0].innerHTML;
+        //alert(motif);
+        if(motif == '½ CA' || motif == '½ JTL'){
+          //alert('half day');
+          inputs = trs[i].children[2].getElementsByTagName('input');
+          //hour
+          inputs[0].value = "3";
+          eventFire(inputs[0], 'input');
+          //min
+          inputs[1].value = "48";
+          eventFire(inputs[1], 'input');
+          eventFire(inputs[0], 'change');
+        }
       }
     }
-  }
-  setTimeout(function() {
     eventFire(document.getElementById('gwt-uid-1'), 'click');
-  }, 2000);
-  button = document.getElementsByClassName('button-action-primaire')[0];
-  if (button){
     setTimeout(function() {
-      eventFire(button, 'click');
+      button = document.getElementsByClassName('button-action-primaire')[0];
+      if (button){
+          eventFire(button, 'click');
+      }
     }, 2200);
-  }
+  }, 2000);
 }
 
 function decompte() {
