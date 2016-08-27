@@ -39,7 +39,7 @@ function getPlayButton() {
     if(flow.length == 1) {
       flow = flow[0];
       play_button = div.getElementsByClassName('icon-stack-circle');
-      if(play_button.length > 1) {
+      if(play_button.length > 0) {
         play_button = play_button[0];
       }
     }
