@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Deezer
 // @namespace   fatmonkeys
-// @include     http://www.deezer.com/
+// @include     http://www.deezer.com/*
 // @run-at      document-start
 // @version     1
 // @grant       none
@@ -32,7 +32,7 @@ function hasClass(element, cls) {
 }
  
 function getPlayButton() {
-  var div = document.getElementById('naboo_content');
+  var div = document.getElementById('page_content');
   var play_button = null;
   if(div != null) {
     var flow = div.getElementsByClassName('flow-btn');
@@ -68,13 +68,13 @@ function getLikeStatus() {
 }
  
 function getNextButton() {
-  var div = document.getElementById('naboo_content');
+  var div = document.getElementById('page_content');
   var next_button = null;
   if(div != null) {
     list = div.getElementsByClassName('flow-action-list')[0];
     if(list != null) {
-      elements = list.getElementsByTagName('li');
-      next_button = elements[elements.length - 1].getElementsByTagName('a')[0];
+      next_item = list.getElementsByClassName('next')[0];
+      next_button = next_item.getElementsByTagName('button')[0];
     }
   }
   return next_button;
