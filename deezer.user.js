@@ -77,6 +77,12 @@ function getNextButton() {
       next_button = next_item.getElementsByTagName('button')[0];
     }
   }
+  if(next_button == null) {
+    div = document.getElementById('player');
+    if(div != null) {
+      next_button = div.getElementsByClassName('control-next')[0];
+    }
+  }
   return next_button;
 }
  
